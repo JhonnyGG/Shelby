@@ -69,5 +69,15 @@ angular.module('starter', ['ionic'])
     }
    })
 
+  .state('tab.info',{
+    url: '/info',
+    views: {
+      'tab-info':{
+        templateUrl: 'templates/info.html'
+      }
+    }
+   })
+
+
   $urlRouterProvider.otherwise('/tab/home');
 })
