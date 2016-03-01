@@ -22,3 +22,52 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.config(function($stateProvider, $urlRouterProvider){
+  $stateProvider
+
+  .state('tab',{
+    url: '/tab',
+    abstract: true,
+    templateUrl: 'templates/tab.html'
+  })
+
+
+  .state('tab.home',{
+    url: '/home',
+    views: {
+      'tab-home':{
+        templateUrl: 'templates/home.html'
+      }
+    }
+   })
+
+  .state('tab.coche',{
+    url: '/coche',
+    views: {
+      'tab-coche':{
+        templateUrl: 'templates/coche.html'
+      }
+    }
+   })
+
+  .state('tab.comunidad',{
+    url: '/comunidad',
+    views: {
+      'tab-comunidad':{
+        templateUrl: 'templates/comunidad.html'
+      }
+    }
+   })
+
+  .state('tab.datos',{
+    url: '/datos',
+    views: {
+      'tab-datos':{
+        templateUrl: 'templates/datos.html'
+      }
+    }
+   })
+
+  $urlRouterProvider.otherwise('/tab/home');
+})
